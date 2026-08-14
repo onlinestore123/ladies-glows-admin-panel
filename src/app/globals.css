@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf8ff;
+  color: #2a1a3d;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f3edff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9333ea, #e9c46a);
+  border-radius: 999px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-brand-gradient
+      px-6 py-3 min-h-[44px] font-body font-bold text-white shadow-brand
+      transition-all duration-300 ease-out
+      hover:shadow-gold hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97]
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-gold
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-purple
+      px-6 py-3 min-h-[44px] font-body font-bold text-brand-purple bg-white
+      transition-all duration-300 ease-out
+      hover:bg-brand-purple hover:text-white hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97]
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-purple
+      disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-pink
+      px-5 py-2.5 min-h-[44px] font-body font-bold text-brand-pink bg-white
+      transition-all duration-300 ease-out
+      hover:bg-brand-pink hover:text-white active:scale-[0.97];
+  }
+
+  .icon-btn {
+    @apply relative flex items-center justify-center w-11 h-11 rounded-full text-brand-purple
+      transition-all duration-200 ease-out hover:bg-brand-100 active:scale-90;
+  }
+
+  .card-surface {
+    @apply rounded-2xl bg-white border border-brand-100 shadow-sm
+      transition-all duration-300 ease-out;
+  }
+
+  .input-field {
+    @apply w-full h-12 rounded-xl border border-brand-100 px-4 text-sm
+      focus:outline-none focus:ring-2 focus:ring-brand-purple/30 transition-shadow;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
